@@ -1,7 +1,9 @@
 calories = []
 tmp = 0
 
-with open ("input.txt", "r") as file:
+# part 1
+
+with open("input.txt", "r") as file:
     for line in file:
         if line.strip() != "":
             tmp += int(line)
@@ -9,12 +11,14 @@ with open ("input.txt", "r") as file:
             calories.append(tmp)
             tmp = 0
     calories.append(tmp)
-print ("The maximum amount of calories is", max(calories), ".")
+print("The maximum amount of calories is ", max(calories), ".", sep="")
+
+# part 2
 
 top3 = [0,0,0]
 tmp = 0
 
-with open ("input.txt", "r") as file:
+with open("input.txt", "r") as file:
     for line in file:
         if line.strip() != "":
             tmp += int(line)
@@ -39,4 +43,4 @@ with open ("input.txt", "r") as file:
     elif top3[2] < tmp:
          top3[2] = tmp
 
-print ("The calorie amount of the top three elves is", (top3[0] + top3[1] + top3[2]), "calories.")
+print("The calorie amount of the top three elves is ", (top3[0] + top3[1] + top3[2]), "calories.", sep="")

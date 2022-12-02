@@ -6,7 +6,7 @@
 
 total_score = 0
 
-with open ("input.txt", "r") as file:
+with open("input.txt", "r") as file:
     for line in file:
         if "X" in line.strip():
             if "A" in line.strip():
@@ -29,7 +29,7 @@ with open ("input.txt", "r") as file:
                 total_score += 6
             total_score += 3
 
-print ("The total score would be", total_score, ".")
+print("The total score would be ", total_score, ".", sep="")
 
 
 # part 2
@@ -42,7 +42,7 @@ print ("The total score would be", total_score, ".")
 
 total_score_correct = 0
 
-with open ("input.txt", "r") as file:
+with open("input.txt", "r") as file:
     for line in file:
         if "X" in line.strip(): # need to lose
             if "A" in line.strip(): # scissors
@@ -70,4 +70,4 @@ with open ("input.txt", "r") as file:
                 total_score_correct += 1
             total_score_correct += 6
 
-print ("The corrected total score would be", total_score_correct, ".")
+print("The corrected total score would be ", total_score_correct, ".", sep="")
