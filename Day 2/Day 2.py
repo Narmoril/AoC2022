@@ -6,7 +6,7 @@
 
 total_score = 0
 
-with open("input.txt", "r") as file:
+with open("Advent of Code\\2022\Day 2\input.txt", "r") as file:
     for line in file:
         if "X" in line.strip():
             if "A" in line.strip():
@@ -42,7 +42,7 @@ print("The total score would be ", total_score, ".", sep="")
 
 total_score_correct = 0
 
-with open("input.txt", "r") as file:
+with open("Advent of Code\\2022\Day 2\input.txt", "r") as file:
     for line in file:
         if "X" in line.strip(): # need to lose
             if "A" in line.strip(): # scissors

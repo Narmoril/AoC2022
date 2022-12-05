@@ -3,7 +3,7 @@ tmp = 0
 
 # part 1
 
-with open("input.txt", "r") as file:
+with open("Advent of Code\\2022\Day 1\input.txt", "r") as file:
     for line in file:
         if line.strip() != "":
             tmp += int(line)
@@ -18,7 +18,7 @@ print("The maximum amount of calories is ", max(calories), ".", sep="")
 top3 = [0,0,0]
 tmp = 0
 
-with open("input.txt", "r") as file:
+with open("Advent of Code\\2022\Day 1\input.txt", "r") as file:
     for line in file:
         if line.strip() != "":
             tmp += int(line)

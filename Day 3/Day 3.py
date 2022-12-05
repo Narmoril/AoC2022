@@ -2,7 +2,7 @@ priority_sum = 0
 
 # part 1
 
-with open("input.txt", "r") as file:
+with open("Advent of Code\\2022\Day 3\input.txt", "r") as file:
     for line in file:
         contents = line
         first_half = contents[:len(line)//2]
@@ -25,7 +25,7 @@ priority_sum = 0
 group_counter = 0
 lineList = []
 
-with open("input.txt", "r") as file:
+with open("Advent of Code\\2022\Day 3\input.txt", "r") as file:
     for line in file:
         lineList.append(line)
         if group_counter == 2:
