@@ -5,7 +5,7 @@ move_args = ["0","0","0"]
 
 # part 1
 
-with open("input.txt", "r") as file:
+with open("Advent of Code\\2022\Day 5\input.txt", "r") as file:
     for line in file:
         if "[" in line:
             for x in line:
@@ -47,7 +47,7 @@ stack_counter = 0
 counter = 0
 move_args = ["0","0","0"]
 
-with open("input.txt", "r") as file:
+with open("Advent of Code\\2022\Day 5\input.txt", "r") as file:
     for line in file:
         if "[" in line:
             for x in line:
