@@ -1,67 +1,55 @@
-numbers = [0,0,0,0]
+numbers = [0, 0, 0, 0]
 elf1counter = 0
 elf2counter = 0
 tmpList = []
-first_elf = []
-second_elf = []
-digits = ["0","1","2","3","4","5","6","7","8","9"]
 final_counter = 0
 counter = 0
 
 # part 1
 # I'm sure this code could be at least half as long and have half as many variables, but hey, at least it works
 
-with open ("input.txt", "r") as file:
+with open("Advent of Code\\2022\Day 4\input.txt", "r") as file:
     for line in file:
-        for x in (line.strip() + ","):
-            if x in digits:
+        for x in line.strip() + ",":
+            if x.isdigit():
                 tmpList.append(x)
-            elif x not in digits:
+            elif x.isdigit() == False:
                 numbers[counter] = int("".join(tmpList))
                 tmpList = []
                 counter += 1
         counter = 0
         elf1counter, elf2counter = numbers[0], numbers[2]
-        while numbers[0] <= numbers[1]:
-            first_elf.append(numbers[0])
-            numbers[0] += 1
-        while numbers[2] <= numbers[3]:
-            second_elf.append(numbers[2])
-            numbers[2] += 1
-        if ((elf2counter in first_elf) and (numbers[3] in first_elf)) or ((elf1counter in second_elf) and (numbers[1] in second_elf)):
+        if ((numbers[0] <= numbers[2]) and (numbers[1] >= numbers[3])) or (
+            (numbers[2] <= numbers[0]) and (numbers[3] >= numbers[1])
+        ):
             final_counter += 1
-        numbers = [0,0,0,0]
-        first_elf = []
-        second_elf = []
+        numbers = [0, 0, 0, 0]
+        line.split(",")[1](2)
 
-print ("The count for highly unnecessary resource distribution is :", final_counter)
+print("The count for highly unnecessary resource distribution is :", final_counter)
 
 # part 2
-# recycled part 1 almost entirely, only exchanged 'and' statements for 'or' statements
+# recycled part 1 almost entirely
 
 final_counter = 0
 
-with open ("input.txt", "r") as file:
+with open("Advent of Code\\2022\Day 4\input.txt", "r") as file:
     for line in file:
-        for x in (line.strip() + ","):
-            if x in digits:
+        for x in line.strip() + ",":
+            if x.isdigit():
                 tmpList.append(x)
-            elif x not in digits:
+            elif x.isdigit() == False:
                 numbers[counter] = int("".join(tmpList))
                 tmpList = []
                 counter += 1
         counter = 0
         elf1counter, elf2counter = numbers[0], numbers[2]
-        while numbers[0] <= numbers[1]:
-            first_elf.append(numbers[0])
-            numbers[0] += 1
-        while numbers[2] <= numbers[3]:
-            second_elf.append(numbers[2])
-            numbers[2] += 1
-        if (elf2counter in first_elf) or (numbers[3] in first_elf) or (elf1counter in second_elf) or (numbers[1] in second_elf):
+        if (
+            (numbers[2] <= numbers[0] <= numbers[3])
+            or (numbers[2] <= numbers[1] <= numbers[3])
+            or (numbers[0] <= numbers[2] <= numbers[1])
+        ):
             final_counter += 1
-        numbers = [0,0,0,0]
-        first_elf = []
-        second_elf = []
+        numbers = [0, 0, 0, 0]
 
-print ("The count for unnecessary resource distribution is :", final_counter)
+print("The count for unnecessary resource distribution is :", final_counter)
